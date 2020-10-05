@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Crownstone Test</title>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+		<!--
+		<link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+		-->
+	</head>
+	<body>
+
+		<!--
+		<style>
+			.edgeLabel {
+				fill: white !important;
+				background: transparent !important;
+			}
+			.edgeLabel rect {
+				opacity: 0 !important;
+				/*
+				fill: white !important;
+				background: transparent !important;
+				*/
+			}
+		</style>
+		-->
+
+		<div class="mermaid">
+			graph TD
+			A[Crownstone cloud] ---|https| B(Crownstone hub)
+			B -->|Bluetooth LE| C[Smartphone]
+			B -->|https| D[Other hub]
+
+		</div>
+	
+		<!-- The above can be obtained through this, or alternatively through themeCSS -->
+		<!--
+			classDef node fill:#003e52,stroke:#ff8400,color:white;
+			classDef edgeLabel fill:white,color:#ff8400,background:transparent;
+		-->
+
+		<script>
+			// Config values can be found https://mermaid-js.github.io/mermaid/getting-started/Setup.html
+			// And https://raw.githubusercontent.com/mermaid-js/mermaid/develop/dist/mermaid.core.js
+			var config = {
+				theme:'forest',
+				startOnLoad:true,
+				flowchart:{
+					useMaxWidth:false,
+					htmlLabels:true
+				},
+				fontSize: 20,
+				themeCSS: ".node rect { fill: #003e52; stroke: #ff8400 }; \
+					.node .label { color: white; }; \
+					.edgeLabel { color: #ff8400; }; \
+					.edgeLabel .rect { opacity: 0; };"
+			};
+			mermaid.initialize(config);
+		</script>
+	</body>
+</html>

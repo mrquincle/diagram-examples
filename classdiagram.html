@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Crownstone Test</title>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+		<!--		<script>mermaid.initialize({startOnLoad:true});</script>-->
+	</head>
+	<body>
+
+		<style>
+			.edgeLabel {
+				fill: white !important;
+				background: transparent !important;
+			}
+			.edgeLabel rect {
+				opacity: 0 !important;
+				/*
+				fill: white !important;
+				background: transparent !important;
+				*/
+			}
+			.classGroup rect {
+				fill: #003e52 !important;
+				stroke: #ff8400 !important;
+			}
+			.classGroup line {
+				fill: #003e52 !important;
+				stroke: #ff8400 !important;
+			}
+			.classText {
+				/*
+				// does not respect height
+				fill: white !important;
+				font-size: 18px !important; 
+				line-height: 33px !important;
+				*/
+			}
+			.title {
+				fill: white !important;
+			}
+			/*
+			// does not work at all
+			.mermaid {
+				font-family: 'trebuchet ms', verdana, arial !important;
+				font-size: 30px !important; 
+			} */
+		</style>
+
+		<div class="mermaid">
+			classDiagram
+			class ADC {
+				adc_config_t _config
+				nrf_ppi_channel_t _ppiChannelSample
+				nrf_ppi_channel_t _ppiChannelStart
+				_handleAdcDoneInterrupt(nrf_saadc_value_t)
+				start()
+				stop()
+				enableZeroCrossingInterrupt()
+				init(const adc_config_t &) cs_adc_error_t
+				releaseBuffer(nrf_saadc_value_t*) bool
+				setZeroCrossingCallback(adc_zero_crossing_cb_t)
+				setDoneCallback(adc_done_cb_t)
+			}
+		</div>
+	</body>
+
+	<script>
+		// Config values can be found https://mermaid-js.github.io/mermaid/getting-started/Setup.html
+		// It is impossible to set font size
+		var config = {
+			theme:'forest',
+			startOnLoad:true,
+			fontSize: 20,
+			textHeight: 30,
+			padding: 10,
+			themeCSS: "g.classGroup text { fill: white; }; \
+				.text { font-size: 20px };"
+		};
+		mermaid.initialize(config);
+	</script>
+</html>
