@@ -4,5 +4,5 @@ Diagram examples using mermaid.
 
 ## Example
 
-![figures/class_diagram.png](Class diagram)
+![Class diagram](figures/class_diagram.png)
 
